@@ -1,0 +1,1412 @@
+html {
+    font-size: 14px;
+    height: 100%;
+    letter-spacing: 0.01rem;
+    /*
+      * Blank page
+      */
+}
+
+html body {
+    height: 100%;
+    background-color: #f8f8f8;
+    direction: ltr;
+}
+
+html body p {
+    line-height: 1.5rem;
+}
+
+.content {
+    padding: 0;
+    position: relative;
+    transition: 300ms ease all;
+    backface-visibility: hidden;
+    min-height: calc(100% - 3.35rem);
+    margin-left: 17%;
+}
+
+/*.content.app-content {*/
+/*    padding: calc(2rem + 4.45rem + 1.3rem) 2rem 0;*/
+/*}*/
+
+.content.app-content.show-overlay .content-overlay {
+    z-index: 10;
+    opacity: 1;
+}
+
+.content.app-content.show-overlay .content-overlay ~ .header-navbar-shadow {
+    display: none;
+}
+
+ .content.app-content .content-overlay {
+    position: fixed;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(34, 41, 47, 0.5);
+    cursor: pointer;
+    transition: all 0.7s, z-index 0s;
+    z-index: -1;
+}
+
+ .content .body-content-overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    display: block;
+    z-index: 4;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+ .content .body-content-overlay.show {
+    visibility: visible;
+    transition: all 0.3s ease;
+    opacity: 1;
+    background-color: rgba(34, 41, 47, 0.2);
+    border-radius: 0.1785rem;
+}
+
+html .navbar-static .main-menu {
+    top: 0;
+}
+
+html .navbar-static .content {
+    min-height: calc(100% - calc(4.45rem + 3.35rem));
+}
+
+html .navbar-static .app-content {
+    padding: 2rem 2rem 0 2rem;
+}
+
+
+html .footer-fixed .content.app-content {
+    padding-bottom: 3.35rem !important;
+}
+
+html [data-col='1-column'] .header-navbar {
+    width: 100%;
+    left: 0 !important;
+}
+
+html [data-col='1-column'] .header-navbar.floating-nav {
+    width: calc(
+        100vw - (100vw - 100%) - calc(2rem * 2)) !important;
+}
+
+html [data-col='1-column'] .content,
+html [data-col='1-column'] .footer {
+    margin-left: 0px !important;
+}
+
+html [data-col='1-column'].horizontal-layout .header-navbar {
+    width: 100% !important;
+}
+
+html [data-col='1-column'].horizontal-layout .app-content {
+    padding: calc(2rem + 4.45rem + 1.3rem) 2rem 0 2rem !important;
+}
+
+html [data-col='1-column'].horizontal-layout.footer-fixed .app-content {
+    padding: calc(2rem + 4.45rem + 1.3rem) 2rem 3.35rem 2rem !important;
+}
+
+html .blank-page .content {
+    margin-left: 0;
+}
+
+html .blank-page .content.app-content {
+    overflow: overlay;
+    overflow-x: hidden;
+    padding: 0 !important;
+    transition: none;
+}
+
+html .blank-page .content.app-content .header-navbar-shadow {
+    display: none;
+}
+
+html .blank-page .content-wrapper {
+    padding: 0 !important;
+}
+
+html .pace .pace-progress {
+    background: #7367f0;
+}
+
+.app-content.center-layout {
+    overflow: hidden;
+}
+
+/*
+* Col 3 layout for detached and general type
+*/
+@media (min-width: 992px) {
+    body .content-right {
+        width: calc(100vw - (100vw - 100%) - 260px);
+        float: right;
+    }
+
+    body .content-left {
+        width: calc(100vw - (100vw - 100%) - 260px);
+        float: left;
+    }
+
+    body .content-detached {
+        width: 100%;
+    }
+
+    body .content-detached.content-right {
+        float: right;
+        margin-left: -260px;
+    }
+
+    body .content-detached.content-right .content-body {
+        margin-left: calc(260px + 2rem);
+    }
+
+    body .content-detached.content-left {
+        float: left;
+        margin-right: -260px;
+    }
+
+    body .content-detached.content-left .content-body {
+        margin-right: calc(260px + 2rem);
+    }
+
+    .sidebar-right.sidebar-sticky {
+        float: right !important;
+        margin-left: -260px;
+        width: 260px !important;
+        margin-top: 5.7rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    html body .app-content {
+        padding: calc(2rem - 0.8rem + 4.45rem + 1.3rem) calc(2rem - 0.8rem) 0 calc(2rem - 0.8rem) !important;
+    }
+
+    html body.navbar-static .app-content {
+        padding: calc(2rem - 0.8rem) calc(2rem - 0.8rem) 0 calc(2rem - 0.8rem) !important;
+    }
+
+    html body.navbar-sticky .app-content {
+        padding: calc(2rem - 0.8rem + 4.45rem) calc(2rem - 0.8rem) 0 calc(2rem - 0.8rem) !important;
+    }
+
+    html body.navbar-hidden .app-content {
+        padding: calc(2rem - 0.8rem) calc(2rem - 0.8rem) 0 calc(2rem - 0.8rem) !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .navbar-static .app-content .header-navbar .navbar-container,
+    .navbar-sticky .app-content .header-navbar .navbar-container {
+        padding-left: 1rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    html.full-screen {
+        width: 100%;
+    }
+
+    html.full-screen .content.app-content {
+        height: 100%;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+}
+
+/*=========================================================================================
+    File Name: sidebar.scss
+    Description: content sidebar specific scss.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, React, Angular, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+.sidebar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 992px) {
+    .sidebar {
+        vertical-align: top;
+    }
+}
+
+.sidebar-fixed {
+    position: fixed;
+    height: 100%;
+    overflow: scroll;
+}
+
+.sidenav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120vh;
+    background-color: rgba(34, 41, 47, 0.5);
+    z-index: 997;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.sidenav-overlay.show {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s ease;
+}
+
+.drag-target {
+    height: 100%;
+    width: 40px;
+    position: fixed;
+    top: 0;
+    left: -10px;
+    z-index: 1036;
+}
+
+.sidebar-detached .sidebar {
+    width: 260px;
+}
+
+@media (min-width: 992px) {
+    .sidebar-left {
+        float: left;
+    }
+
+    .sidebar-right {
+        float: right;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .sidebar-detached .sidebar {
+        width: 100%;
+    }
+}
+
+footer.footer {
+    padding: 0.8rem 2rem;
+    min-height: 3.35rem;
+    transition: 300ms ease all;
+}
+
+footer.footer span i,
+footer.footer span svg {
+    height: 1.51rem;
+    width: 1.51rem;
+    font-size: 1.51rem;
+    margin-left: 0.5rem;
+    color: #ea5455;
+}
+
+footer.footer .scroll-top {
+    padding: 0.81rem 0.83rem;
+}
+
+footer.footer-shadow {
+    box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
+}
+
+footer.footer-border {
+    border-top: 1px solid #ebe9f1;
+}
+
+.footer-fixed footer {
+    position: fixed !important;
+    z-index: 1030;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.footer-fixed footer.footer-light {
+    background: #fff;
+    box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
+}
+
+.footer-fixed footer.footer-dark {
+    background: #b8c2cc;
+    color: #fff;
+}
+
+.footer-hidden .app-content {
+    padding-bottom: 0.1px !important;
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 5%;
+    right: 30px;
+    display: none;
+    z-index: 99;
+}
+
+/*=========================================================================================
+    File Name: navigation.scss
+    Description: Common mixin for menus, contain dark and light version scss.
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy - Vuejs, React, Angular, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+.main-menu {
+    z-index: 1031;
+    position: absolute;
+    display: table-cell;
+    height: 100%;
+    overflow: hidden;
+}
+
+.main-menu.menu-grey {
+    color: #fff;
+    background: grey;
+}
+
+.main-menu.menu-grey .navigation .navigation-header {
+    color: #a6a4b0;
+    margin: calc(2rem + 0.286rem) 0 0.8rem 2.2rem;
+    padding: 0;
+    line-height: 1.5;
+    letter-spacing: 0.01rem;
+}
+
+.main-menu.menu-grey .navigation .navigation-header span {
+    font-weight: 500;
+}
+
+.main-menu.menu-grey .navigation li.has-sub > a {
+    transition: all 0.5s ease, background 0s, color 0s;
+}
+
+.main-menu.menu-grey .navigation li a {
+    color: #625f6e;
+    padding: 10px 15px 10px 15px;
+    line-height: 1.45;
+}
+
+.main-menu.menu-grey .navigation li a span.menu-sub-title {
+    color: #bdbbc4;
+}
+
+.main-menu.menu-grey .navigation li a > * {
+    transition: transform 0.25s ease;
+}
+
+.main-menu.menu-grey .navigation li.nav-item a:hover > * {
+    transition: transform 0.25s ease;
+    transform: translateX(5px);
+}
+
+.main-menu.menu-grey .navigation li.nav-item ul.menu-content li a:hover > * {
+    transition: transform 0.25s ease;
+    transform: translateX(5px);
+}
+
+.main-menu.menu-grey .navigation > li > a {
+    margin: 0 15px;
+}
+
+.main-menu.menu-grey .navigation > li > a .label {
+    margin-top: 4px;
+    margin-right: 5px;
+}
+
+.main-menu.menu-grey .navigation > li > a i,
+.main-menu.menu-grey .navigation > li > a svg {
+    position: relative;
+    top: 1px;
+}
+
+.main-menu.menu-grey .navigation > li > ul li:first-of-type {
+    margin-top: 7px !important;
+}
+
+.main-menu.menu-grey .navigation > li > ul li:not(.has-sub) {
+    margin: 0 15px;
+}
+
+.main-menu.menu-grey .navigation > li > ul li.has-sub > a {
+    margin: 0 15px;
+}
+
+.main-menu.menu-grey .navigation > li > ul li.has-sub > ul > li {
+    margin: 0 15px;
+}
+
+.main-menu.menu-grey .navigation > li.open:not(.menu-item-closing) > a, .main-menu.menu-grey .navigation > li.sidebar-group-active > a {
+    color: #565360;
+    background: whitesmoke;
+    border-radius: 6px;
+}
+
+.main-menu.menu-grey .navigation > li:not(.open) > ul {
+    display: none;
+}
+
+.main-menu.menu-grey .navigation > li:not(.open) > ul .active {
+    background: transparent;
+    box-shadow: none;
+}
+
+.main-menu.menu-grey .navigation > li.active {
+    z-index: 1;
+}
+
+.main-menu.menu-grey .navigation > li.active > a {
+    background: linear-gradient(118deg, #7367f0, rgba(115, 103, 240, 0.7));
+    box-shadow: 0 0 10px 1px rgba(115, 103, 240, 0.7);
+    color: #fff;
+    font-weight: 400;
+    border-radius: 4px;
+}
+
+.main-menu.menu-grey .navigation > li .active {
+    background: #f0f0f0;
+}
+
+.main-menu.menu-grey .navigation > li .active > a {
+    color: #7367f0;
+    margin-bottom: 0;
+}
+
+.main-menu.menu-grey .navigation > li .active .hover > a,
+.main-menu.menu-grey .navigation > li .active :hover > a {
+    background: whitesmoke;
+}
+
+.main-menu.menu-grey .navigation > li ul {
+    padding: 0;
+    margin: 0;
+}
+
+.main-menu.menu-grey .navigation > li ul li {
+    color: #6e6b7b;
+    background: transparent;
+}
+
+.main-menu.menu-grey .navigation > li ul li > a {
+    padding: 10px 15px 10px 20px;
+}
+
+.main-menu.menu-grey .navigation > li ul li ul a {
+    padding: 10px 15px 10px 53px;
+}
+
+.main-menu.menu-grey .navigation > li ul .has-sub:not(.open) > ul {
+    display: none;
+}
+
+.main-menu.menu-grey .navigation > li ul .has-sub:not(.open) > ul .active {
+    background: transparent;
+    box-shadow: none;
+}
+
+.main-menu.menu-grey .navigation > li ul .open > a,
+.main-menu.menu-grey .navigation > li ul .sidebar-group-active > a {
+    color: #6e6b7b;
+    background: whitesmoke;
+    border-radius: 6px;
+}
+
+.main-menu.menu-grey .navigation > li ul .open > ul,
+.main-menu.menu-grey .navigation > li ul .sidebar-group-active > ul {
+    display: block;
+}
+
+.main-menu.menu-grey .navigation > li ul .open > ul .open > ul,
+.main-menu.menu-grey .navigation > li ul .sidebar-group-active > ul .open > ul {
+    display: block;
+}
+
+.main-menu.menu-grey .navigation > li ul .hover > a, .main-menu.menu-grey .navigation > li ul:hover > a {
+    color: #787486;
+}
+
+.main-menu.menu-grey .navigation > li ul .active {
+    background: linear-gradient(118deg, #7367f0, rgba(115, 103, 240, 0.7));
+    box-shadow: 0 0 10px 1px rgba(115, 103, 240, 0.7);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.main-menu.menu-grey .navigation > li ul .active > a {
+    color: #fff;
+}
+
+.main-menu.menu-dark {
+    color: #dcdcdc;
+    background: #10163a;
+}
+
+.main-menu.menu-dark .navigation {
+    background: #10163a;
+}
+
+.main-menu.menu-dark .navigation .navigation-header {
+    color: white;
+    margin: calc(2rem + 0.286rem) 0 0.8rem 2.2rem;
+    padding: 0;
+    line-height: 1.5;
+    letter-spacing: 0.01rem;
+}
+
+.main-menu.menu-dark .navigation .navigation-header span {
+    font-weight: 500;
+}
+
+.main-menu.menu-dark .navigation li.has-sub > a {
+    transition: all 0.5s ease, background 0s, color 0s;
+}
+
+.main-menu.menu-dark .navigation li a {
+    color: #d0d0d0;
+    padding: 10px 15px 10px 15px;
+    line-height: 1.45;
+}
+
+.main-menu.menu-dark .navigation li a span.menu-sub-title {
+    color: white;
+}
+
+.main-menu.menu-dark .navigation li a > * {
+    transition: transform 0.25s ease;
+}
+
+.main-menu.menu-dark .navigation li.nav-item a:hover > * {
+    transition: transform 0.25s ease;
+    transform: translateX(5px);
+}
+
+.main-menu.menu-dark .navigation li.nav-item ul.menu-content li a:hover > * {
+    transition: transform 0.25s ease;
+    transform: translateX(5px);
+}
+
+.main-menu.menu-dark .navigation > li > a {
+    margin: 0 15px;
+}
+
+.main-menu.menu-dark .navigation > li > a .label {
+    margin-top: 4px;
+    margin-right: 5px;
+}
+
+.main-menu.menu-dark .navigation > li > a i,
+.main-menu.menu-dark .navigation > li > a svg {
+    position: relative;
+    top: 1px;
+}
+
+.main-menu.menu-dark .navigation > li > ul li:first-of-type {
+    margin-top: 7px !important;
+}
+
+.main-menu.menu-dark .navigation > li > ul li:not(.has-sub) {
+    margin: 0 15px;
+}
+
+.main-menu.menu-dark .navigation > li > ul li.has-sub > a {
+    margin: 0 15px;
+}
+
+.main-menu.menu-dark .navigation > li > ul li.has-sub > ul > li {
+    margin: 0 15px;
+}
+
+.main-menu.menu-dark .navigation > li.open:not(.menu-item-closing) > a, .main-menu.menu-dark .navigation > li.sidebar-group-active > a {
+    color: #c3c3c3;
+    background: #0c102a;
+    border-radius: 6px;
+}
+
+.main-menu.menu-dark .navigation > li:not(.open) > ul {
+    display: none;
+}
+
+.main-menu.menu-dark .navigation > li:not(.open) > ul .active {
+    background: transparent;
+    box-shadow: none;
+}
+
+.main-menu.menu-dark .navigation > li.active {
+    z-index: 1;
+}
+
+.main-menu.menu-dark .navigation > li.active > a {
+    background: linear-gradient(118deg, #7367f0, rgba(115, 103, 240, 0.7));
+    box-shadow: 0 0 10px 1px rgba(115, 103, 240, 0.7);
+    color: #fff;
+    font-weight: 400;
+    border-radius: 4px;
+}
+
+.main-menu.menu-dark .navigation > li .active {
+    background: #090d22;
+}
+
+.main-menu.menu-dark .navigation > li .active > a {
+    color: #7367f0;
+    margin-bottom: 0;
+}
+
+.main-menu.menu-dark .navigation > li .active .hover > a,
+.main-menu.menu-dark .navigation > li .active :hover > a {
+    background: #0c102a;
+}
+
+.main-menu.menu-dark .navigation > li ul {
+    padding: 0;
+    margin: 0;
+}
+
+.main-menu.menu-dark .navigation > li ul li {
+    color: #dcdcdc;
+    background: transparent;
+}
+
+.main-menu.menu-dark .navigation > li ul li > a {
+    padding: 10px 15px 10px 20px;
+}
+
+.main-menu.menu-dark .navigation > li ul li ul a {
+    padding: 10px 15px 10px 53px;
+}
+
+.main-menu.menu-dark .navigation > li ul .has-sub:not(.open) > ul {
+    display: none;
+}
+
+.main-menu.menu-dark .navigation > li ul .has-sub:not(.open) > ul .active {
+    background: transparent;
+    box-shadow: none;
+}
+
+.main-menu.menu-dark .navigation > li ul .open > a,
+.main-menu.menu-dark .navigation > li ul .sidebar-group-active > a {
+    color: #dcdcdc;
+    background: #0c102a;
+    border-radius: 6px;
+}
+
+.main-menu.menu-dark .navigation > li ul .open > ul,
+.main-menu.menu-dark .navigation > li ul .sidebar-group-active > ul {
+    display: block;
+}
+
+.main-menu.menu-dark .navigation > li ul .open > ul .open > ul,
+.main-menu.menu-dark .navigation > li ul .sidebar-group-active > ul .open > ul {
+    display: block;
+}
+
+.main-menu.menu-dark .navigation > li ul .hover > a, .main-menu.menu-dark .navigation > li ul:hover > a {
+    color: #e6e6e6;
+}
+
+.main-menu.menu-dark .navigation > li ul .active {
+    background: linear-gradient(118deg, #7367f0, rgba(115, 103, 240, 0.7));
+    box-shadow: 0 0 10px 1px rgba(115, 103, 240, 0.7);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.main-menu.menu-dark .navigation > li ul .active > a {
+    color: #fff;
+}
+
+.main-menu.menu-fixed {
+    position: fixed;
+}
+
+.main-menu.menu-static {
+    height: 100%;
+    padding-bottom: calc(100% - 20rem);
+}
+
+.main-menu.menu-static .main-menu-content {
+    height: unset !important;
+}
+
+.main-menu.menu-shadow {
+    box-shadow: 0 0 15px 0 rgba(34, 41, 47, 0.05);
+}
+
+.main-menu.menu-border {
+    border-right: 1px solid #ebe9f1;
+}
+
+.main-menu .shadow-bottom {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    height: 50px;
+    width: 100%;
+    pointer-events: none;
+    margin-top: -0.7rem;
+    filter: blur(5px);
+    background: linear-gradient(#fff 41%, rgba(255, 255, 255, 0.11) 95%, rgba(255, 255, 255, 0));
+}
+
+.bordered-layout .main-menu .shadow-bottom {
+    background: linear-gradient(#f8f8f8 41%, rgba(255, 255, 255, 0.11) 95%, rgba(255, 255, 255, 0));
+}
+
+.main-menu.menu-native-scroll .main-menu-content {
+    overflow-y: scroll !important;
+}
+
+.main-menu .navbar-header {
+    height: 100%;
+    width: 260px;
+    height: 4.45rem;
+    position: relative;
+    padding: 0.35rem 1rem 0.3rem 1.64rem;
+    transition: 300ms ease all, background 0s;
+}
+
+.main-menu .navbar-header .navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-top: 1.35rem;
+    font-size: inherit;
+}
+
+.main-menu .navbar-header .navbar-brand .brand-logo img {
+    max-width: 36px;
+}
+
+.main-menu .navbar-header .navbar-brand .brand-text {
+    color: #7367f0;
+    padding-left: 1rem;
+    margin-bottom: 0;
+    font-weight: 600;
+    letter-spacing: 0.01rem;
+    font-size: 1.45rem;
+    animation: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
+}
+
+.main-menu .navbar-header .modern-nav-toggle {
+    animation: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
+}
+
+.main-menu .main-menu-content {
+    height: calc(100% - 4.45rem) !important;
+    position: relative;
+}
+
+.main-menu .main-menu-content .ps__rail-y {
+    z-index: 3;
+}
+
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu ul.navigation-main {
+    overflow-x: hidden;
+    padding-bottom: 0.75rem;
+}
+
+.main-menu ul.navigation-main > li:first-child {
+    margin-top: 0.5rem;
+}
+
+.main-menu a {
+    outline: none;
+}
+
+.main-menu a:hover, .main-menu a:focus {
+    text-decoration: none;
+}
+
+.navigation {
+    font-size: 1.1rem;
+    font-family: "Montserrat", Helvetica, Arial, serif;
+    font-weight: 400;
+    overflow-y: hidden;
+    padding-bottom: 20px;
+}
+
+.navigation .navigation-header {
+    font-family: "Montserrat", Helvetica, Arial, serif;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 12px 22px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.navigation li {
+    position: relative;
+    white-space: nowrap;
+    outline: none;
+}
+
+.navigation li a {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.navigation li a i,
+.navigation li a svg {
+    height: 11px;
+    width: 11px;
+    font-size: 11px;
+    margin-right: 1.38rem;
+}
+
+.navigation li.menu-item-animating {
+    transition: height 0.25s ease-in-out;
+}
+
+.navigation li.disabled a {
+    cursor: not-allowed;
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+@media (max-width: 767.98px) {
+    .menu-hide .main-menu,
+    .menu-open .main-menu {
+        transition: transform 0.25s, top 0.35s, height 0.35s;
+    }
+
+    .main-menu {
+        transform: translate3d(-240px, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000;
+    }
+
+    .menu-open .main-menu {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@media (min-width: 768px) {
+    .drag-target {
+        z-index: 0;
+    }
+}
+
+/*=========================================================================================
+	File Name: search.scss
+	Description: Search  functionality.
+	----------------------------------------------------------------------------------------
+	Item Name: Vuexy - Vuejs, React, Angular, HTML & Laravel Admin Dashboard Template
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+.navbar-container a.nav-link-search {
+    float: left;
+}
+
+.navbar-container .search-input {
+    width: 0;
+    float: left;
+    display: none;
+}
+
+.navbar-container .search-input input {
+    width: 0;
+    border: none;
+    background: none;
+    transition: all 0.2s ease-out;
+    line-height: 16px;
+    padding: 1.6rem 3.6rem;
+}
+
+.navbar-container .search-input.open {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    display: block;
+    background: #fff;
+    border-radius: 0.5rem;
+}
+
+.navbar-container .search-input.open .search-input-close,
+.navbar-container .search-input.open .search-input-icon {
+    display: block;
+}
+
+.navbar-container .search-input.open input {
+    width: 100%;
+    outline: none;
+    background: none;
+    height: auto;
+    box-shadow: none;
+    transition: all 0.3s ease-out;
+}
+
+.navbar-container .search-input .search-list {
+    max-height: 450px;
+    height: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding-left: 0;
+    border-radius: 0.357rem;
+    display: none;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 875px) and (orientation: landscape) {
+    .navbar-container .search-input .search-list {
+        max-height: 250px;
+    }
+}
+
+.navbar-container .search-input .search-list.search-list-bookmark {
+    height: auto !important;
+}
+
+.navbar-container .search-input .search-list.search-list-bookmark i,
+.navbar-container .search-input .search-list.search-list-bookmark svg {
+    font-size: 1.2rem;
+    height: 1.2rem;
+    width: 1.2rem;
+}
+
+.navbar-container .search-input .search-list.show {
+    display: block;
+    min-height: 3rem;
+}
+
+.navbar-container .search-input .search-list li a {
+    padding: 0.9rem 1rem;
+    color: #6e6b7b;
+}
+
+.navbar-container .search-input .search-list li a i,
+.navbar-container .search-input .search-list li a svg[class*='feather feather-'] {
+    height: 1.25rem;
+    width: 1.25rem;
+    font-size: 1.25rem;
+}
+
+.navbar-container .search-input .search-list li:first-child {
+    border-top-left-radius: 0.357rem;
+    border-top-right-radius: 0.357rem;
+}
+
+.navbar-container .search-input .search-list li:last-child {
+    border-bottom-left-radius: 0.357rem;
+    border-bottom-right-radius: 0.357rem;
+}
+
+.navbar-container .search-input .search-list li.auto-suggestion {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar-container .search-input .search-list li.auto-suggestion:hover, .navbar-container .search-input .search-list li.auto-suggestion.current_item {
+    background-color: #f8f8f8;
+}
+
+.navbar-container .search-input .search-input-icon {
+    z-index: 2;
+    display: none;
+    position: absolute;
+    left: 1.5rem;
+    top: 32%;
+    cursor: pointer;
+}
+
+.navbar-container .search-input .search-input-icon i,
+.navbar-container .search-input .search-input-icon svg {
+    height: 1.25rem;
+    width: 1.25rem;
+    font-size: 1.25rem;
+}
+
+.navbar-container .search-input .search-input-close {
+    z-index: 1;
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 32%;
+    cursor: pointer;
+}
+
+.navbar-container .search-input .search-input-close i,
+.navbar-container .search-input .search-input-close svg {
+    height: 1.25rem;
+    width: 1.25rem;
+    font-size: 1.25rem;
+}
+
+.navbar-container .bookmark-input {
+    position: absolute;
+    top: 102%;
+    width: 25%;
+    display: none;
+    background: #fff;
+    border-radius: 0.357rem;
+    box-shadow: 0 15px 30px 0 rgba(34, 41, 47, 0.11), 0 5px 15px 0 rgba(34, 41, 47, 0.08);
+}
+
+.navbar-container .bookmark-input.show {
+    display: block;
+}
+
+.navbar-container .bookmark-input .bookmark-input-icon {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    left: 24px;
+}
+
+.navbar-container .bookmark-input input {
+    padding: 0.7rem 0.7rem 0.7rem 2.5rem;
+    margin: 12px;
+    width: calc(100% - 24px);
+    background: #fff;
+    border: 1px solid rgba(34, 41, 47, 0.2);
+}
+
+.navbar-container .bookmark-input input:focus {
+    border: 1px solid #7367f0;
+}
+
+.navbar-container .bookmark-input .search-list {
+    position: relative;
+}
+
+.navbar-container .bookmark-icon {
+    cursor: pointer;
+}
+
+.navbar-container .dropdown.bookmark-dropdown {
+    padding: 1.4rem 0.5rem 1.35rem;
+}
+
+.navbar-container .dropdown.bookmark-dropdown .dropdown-toggle:after {
+    display: none;
+}
+
+.navbar-container .search-data-title {
+    line-height: 1.25rem;
+}
+
+.navbar-dark .search-input .input {
+    color: #f5f7fa;
+    border-radius: 0.5rem;
+}
+
+.navbar-dark .search-input.open .input {
+    color: #f5f7fa;
+    border: 1px solid #f5f7fa;
+}
+
+.navbar-static .navbar-container .search-input.open {
+    border-radius: 0;
+}
+
+.loader-wrapper {
+    height: 8em;
+}
+
+.maintenance-icon {
+    font-size: 4rem;
+}
+
+.animationIcon {
+    right: 30px;
+    bottom: 10px;
+}
+
+.dark-layout #breadcrumb-alignment .breadcrumb-wrapper {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.24);
+}
+
+.buy-now {
+    position: fixed;
+    bottom: 5%;
+    right: 79px;
+    z-index: 1031;
+}
+
+.buy-now .btn {
+    box-shadow: 0 1px 20px 1px #ea5455 !important;
+}
+
+.buy-now .btn:hover {
+    box-shadow: none !important;
+}
+
+/*=========================================================================================
+	File Name: customizer.scss
+	Description: CSS used for demo purpose only. Remove this css from your project.
+	----------------------------------------------------------------------------------------
+	Item Name: Vuexy - Vuejs, React, Angular, HTML & Laravel Admin Dashboard Template
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+.customizer {
+    width: 400px;
+    right: -400px;
+    padding: 0;
+    background-color: #fff;
+    z-index: 1051;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    transition: right 0.4s cubic-bezier(0.05, 0.74, 0.2, 0.99);
+    backface-visibility: hidden;
+    border-left: 1px solid rgba(34, 41, 47, 0.05);
+}
+
+.customizer.open {
+    box-shadow: 0 15px 30px 0 rgba(34, 41, 47, 0.11), 0 5px 15px 0 rgba(34, 41, 47, 0.08);
+    right: 0;
+}
+
+.customizer .customizer-content {
+    position: relative;
+    height: 100%;
+}
+
+.customizer .customizer-close {
+    position: absolute;
+    right: 0.6rem;
+    top: 0.6rem;
+    padding: 7px;
+    width: auto;
+    z-index: 10;
+    color: #5e5873;
+}
+
+.customizer .customizer-close i,
+.customizer .customizer-close svg {
+    font-size: 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.customizer .customizer-toggle {
+    background: #7367f0;
+    color: #fff !important;
+    display: block;
+    box-shadow: -3px 0px 8px rgba(34, 41, 47, 0.1);
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    position: absolute;
+    top: 50%;
+    width: 38px;
+    height: 38px;
+    left: -39px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.customizer .color-box {
+    height: 24px;
+    width: 24px;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.customizer .color-box.selected:after {
+    content: '';
+    border: 1px solid #7367f0;
+    height: 30px;
+    width: 30px;
+    top: -3px;
+    left: -3px;
+    position: absolute;
+    border-radius: 0.5rem;
+}
+
+.customizer .color-box.selected.border:after {
+    top: -4px;
+    left: -4px;
+}
+.timeline {
+    padding: 0;
+    margin-bottom: 0;
+    margin-left: 1rem;
+    list-style: none;
+}
+
+.timeline .timeline-item {
+    position: relative;
+    padding-left: 2.5rem;
+    border-left: 1px solid #ebe9f1;
+}
+
+.timeline .timeline-item:not(:last-child) {
+    padding-bottom: 1.8rem;
+}
+
+.timeline .timeline-item .timeline-point {
+    position: absolute;
+    left: -0.85rem;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.75rem;
+    width: 1.75rem;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #7367f0;
+    background-color: #fff;
+}
+
+.timeline .timeline-item .timeline-point.timeline-point-indicator {
+    left: -0.412rem;
+    top: 0.07rem;
+    height: 12px;
+    width: 12px;
+    border: 0;
+    background-color: #7367f0;
+}
+
+.timeline .timeline-item .timeline-point.timeline-point-indicator:before {
+    content: '';
+    background: rgba(115, 103, 240, 0.12);
+    height: 20px;
+    width: 20px;
+    display: block;
+    position: absolute;
+    top: -0.285rem;
+    left: -0.285rem;
+    border-radius: 50%;
+}
+
+.timeline .timeline-item .timeline-point i,
+.timeline .timeline-item .timeline-point svg {
+    color: #7367f0;
+    font-size: 0.85rem;
+    vertical-align: baseline;
+}
+
+.timeline .timeline-item .timeline-event {
+    position: relative;
+    width: 100%;
+    min-height: 4rem;
+}
+
+.timeline .timeline-item .timeline-event .timeline-event-time {
+    font-size: 0.85rem;
+    color: #b9b9c3;
+}
+
+.timeline .timeline-item:last-of-type {
+    border-left-color: transparent !important;
+}
+
+.timeline .timeline-item:last-of-type:after {
+    content: '';
+    position: absolute;
+    left: -1px;
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(#ebe9f1, transparent);
+}
+
+@media screen and (min-width: 0px) {
+    head {
+        font-family: "xs 0px";
+    }
+
+    body:after {
+        content: "xs - min-width: 0px";
+    }
+}
+
+@media screen and (min-width: 544px) {
+    head {
+        font-family: "sm 544px";
+    }
+
+    body:after {
+        content: "sm - min-width: 544px";
+    }
+}
+
+@media screen and (min-width: 768px) {
+    head {
+        font-family: "md 768px";
+    }
+
+    body:after {
+        content: "md - min-width: 768px";
+    }
+}
+
+@media screen and (min-width: 992px) {
+    head {
+        font-family: "lg 992px";
+    }
+
+    body:after {
+        content: "lg - min-width: 992px";
+    }
+}
+
+body:after {
+    display: none;
+}
+
+*[data-usn-if] {
+    display: none;
+}
+
+@media (max-width: 575.98px) {
+    .dtr-bs-modal .modal-body {
+        padding-left: 0;
+        padding-right: 0;
+        overflow-x: scroll;
+    }
+
+    .dtr-bs-modal .table.dtr-details {
+        margin: 0 auto 1rem;
+    }
+
+    .dtr-bs-modal .table.dtr-details td {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .dtr-bs-modal .table.dtr-details tr td:first-child {
+        padding-left: 0.75rem;
+    }
+
+    div.dataTables_wrapper {
+        overflow: scroll;
+    }
+}
